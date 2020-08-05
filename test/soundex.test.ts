@@ -8,7 +8,6 @@ describe('soundex', () => {
         const result2 = soundex('Gary');
         expect(result2[0]).to.equal('G');
     });
-
     it('should replace occurrences of b, f, p, v with 1, after the first character', () => {
         const result1 = soundex('Ab');
         expect(result1.substr(0, 2)).to.equal('A1');
@@ -62,4 +61,9 @@ describe('soundex', () => {
         const result1 = soundex('Ar');
         expect(result1.substr(0, 2)).to.equal('A6');
     });
+
+    it('should replace all consonants with digits', () => {
+        const result = soundex('Bfv');
+        expect(result.substr(0,3)).to.equal('B11')
+    })
 });
