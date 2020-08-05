@@ -7,6 +7,10 @@ export const soundex = (sentence: string): string => {
     return `${sentence[0]}4`;
   }
 
+  if(sentence[1] === 'r') {
+    return `${sentence[0]}6`;
+  }
+
   if(twos.includes(sentence[1])){
     return `${sentence[0]}2`;
   }

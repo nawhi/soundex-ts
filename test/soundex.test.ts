@@ -57,4 +57,9 @@ describe('soundex', () => {
         const result2 = soundex('Bn');
         expect(result2.substr(0, 2)).to.equal('B5');
     });
+
+    it('r = 6', () => {
+        const result1 = soundex('Ar');
+        expect(result1.substr(0, 2)).to.equal('A6');
+    });
 });
