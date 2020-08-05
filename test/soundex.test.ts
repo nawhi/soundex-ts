@@ -38,4 +38,11 @@ describe('soundex', () => {
         const result8 = soundex('Hz');
         expect(result8.substr(0, 2)).to.equal('H2');
     });
+
+    it('d, t = 3', () => {
+        const result1 = soundex('Ad');
+        expect(result1.substr(0, 2)).to.equal('A3');
+        const result2 = soundex('Bt');
+        expect(result2.substr(0, 2)).to.equal('B3');
+    });
 });
