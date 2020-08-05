@@ -50,4 +50,11 @@ describe('soundex', () => {
         const result1 = soundex('Al');
         expect(result1.substr(0, 2)).to.equal('A4');
     });
+
+    it('m, n = 5', () => {
+        const result1 = soundex('Am');
+        expect(result1.substr(0, 2)).to.equal('A5');
+        const result2 = soundex('Bn');
+        expect(result2.substr(0, 2)).to.equal('B5');
+    });
 });
