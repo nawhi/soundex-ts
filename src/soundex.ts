@@ -1,14 +1,14 @@
 export const soundex = (sentence: string): string => {
-  const twos: string[] = ['c', 'g', 'j', 'k', 'q', 's', 'x', 'z'];
-  const threes: string[] = ['d', 't'];
-  const fives: string[] = ['m', 'n'];
+  const ones = ['b', 'f', 'p', 'v'];
+  const twos = ['c', 'g', 'j', 'k', 'q', 's', 'x', 'z'];
+  const threes = ['d', 't'];
+  const fours = ['l'];
+  const fives = ['m', 'n'];
+  const sixes = ['r'];
 
-  if(sentence[1] === 'l') {
-    return `${sentence[0]}4`;
-  }
 
-  if(sentence[1] === 'r') {
-    return `${sentence[0]}6`;
+  if(ones.includes(sentence[1])){
+    return `${sentence[0]}1`;
   }
 
   if(twos.includes(sentence[1])){
@@ -19,9 +19,18 @@ export const soundex = (sentence: string): string => {
     return `${sentence[0]}3`;
   }
 
-  if(fives.includes(sentence[1])){
-    return `${sentence[0]}5`;
+  if(fours.includes(sentence[1])) {
+    return `${sentence[0]}4`;
   }
 
-  return `${sentence[0]}1`;
+  if(fives.includes(sentence[1])){
+    return `${sentence[0]}5`;
+
+  }
+
+  if(sixes.includes(sentence[1])) {
+    return `${sentence[0]}6`;
+  }
+
+  return `${sentence[0]}`;
 }
