@@ -63,7 +63,9 @@ describe('soundex', () => {
     });
 
     it('should replace all consonants with digits', () => {
-        const result = soundex('Bfv');
-        expect(result.substr(0,3)).to.equal('B11')
+        const result = soundex('Bvr');
+        expect(result.substr(0,3)).to.equal('B16')
+        const result2 = soundex('Sarah')
+        expect(result2.substr(0,2)).to.eql('S6')
     })
 });
