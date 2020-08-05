@@ -45,4 +45,9 @@ describe('soundex', () => {
         const result2 = soundex('Bt');
         expect(result2.substr(0, 2)).to.equal('B3');
     });
+
+    it('l = 4', () => {
+        const result1 = soundex('Al');
+        expect(result1.substr(0, 2)).to.equal('A4');
+    });
 });
