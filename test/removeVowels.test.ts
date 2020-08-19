@@ -6,6 +6,7 @@ function removeAllVowels(word: string): string {
 
 describe('removeVowels', () => {
     it('should remove all vowels + y from a word (except the first letter)', () => {
-        expect(removeAllVowels('aweiouy')).to.eql('w')
+        expect(removeAllVowels('aweiouy')).to.eql('w');
+        expect(removeAllVowels('AWEIOUY')).to.eql('W');
     })
 });
