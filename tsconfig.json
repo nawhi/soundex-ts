@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "target": "es2019",
     "module": "commonjs",
+    "lib": ["es2019"],
     "moduleResolution": "node",
     "removeComments": true,
     "preserveConstEnums": true,
     "sourceMap": true,
-    "lib": ["es6"],
     "outDir": "lib",
     "alwaysStrict": true,
     "downlevelIteration": true,
