@@ -1,10 +1,11 @@
 import {expect} from 'chai';
 
-function removeAllVowels(word: string, lettersToRemove: string = "aeiouy"): string {
-    const [...letters] = lettersToRemove;
+const createLetterRemover = (letters: string[]) => (word: string) => {
     let searchValue: RegExp = new RegExp(`[${letters.join('')}]`, 'gi');
     return word.replace(searchValue, '')
 }
+
+const removeAllVowels = createLetterRemover(['a','e','i','o','u','y']);
 
 describe('removeVowels', () => {
     it('should remove all vowels + y from a word (except the first letter)', () => {
