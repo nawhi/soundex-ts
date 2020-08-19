@@ -1,14 +1,14 @@
 import {expect} from 'chai';
 
-const createLetterRemover = (letters: string[]) => (word: string) => {
+const createLetterReplacer = (letters: string[], replacement: string = '') => (word: string) => {
     let searchValue: RegExp = new RegExp(`[${letters.join('')}]`, 'gi');
-    return word.replace(searchValue, '')
+    return word.replace(searchValue, replacement)
 }
 
-const removeAllVowels = createLetterRemover(['a','e','i','o','u','y']);
-const removeWAndH = createLetterRemover(['w','h']);
+const removeAllVowels = createLetterReplacer(['a','e','i','o','u','y']);
+const removeWAndH = createLetterReplacer(['w','h']);
 
-describe('createLetterRemover', () => {
+describe('createLetterReplacer', () => {
     describe('removeVowels', () => {
         it('should remove all vowels + y from a word (except the first letter)', () => {
             expect(removeAllVowels('aweiouy')).to.eql('w');
