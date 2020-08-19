@@ -1,7 +1,8 @@
 import {expect} from 'chai';
 
-function removeAllVowels(word: string): string {
-    let searchValue: RegExp = new RegExp('[aeiouy]', 'gi');
+function removeAllVowels(word: string, lettersToRemove: string = "aeiouy"): string {
+    const [...letters] = lettersToRemove;
+    let searchValue: RegExp = new RegExp(`[${letters.join('')}]`, 'gi');
     return word.replace(searchValue, '')
 }
 
